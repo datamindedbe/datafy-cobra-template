@@ -4,7 +4,7 @@ def s3_bucket(env: str):
 
 
 def s3_prefix(env: str):
-    return 'cobra/results/prototype'
+    return 'cobra/results/{{ cookiecutter.project_name }}'
 
 
 def s3_root(env: str):
