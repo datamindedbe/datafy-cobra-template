@@ -52,7 +52,7 @@ model_train = DatafyContainerOperator(
     task_id="model_train",
     name="model_train",
     image=image,
-    instance_type="mx_small",
+    instance_type="mx_large",
     arguments=["--date", "{% raw %}{{ ds }}{% endraw %}", "--jobs", "model_training", "--env", "{% raw %}{{ macros.env() }}{% endraw %}"],
     service_account_name="{{ cookiecutter.project_name }}",
 )
