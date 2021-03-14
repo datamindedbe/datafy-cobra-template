@@ -30,8 +30,8 @@ dag = DAG(
 preprocessing = DatafyContainerOperator(
     dag=dag,
     task_id="preprocessing",
-    name="preprocessing",
     image=image,
+    instance_type='mx_small',
     arguments=["--date", "{% raw %}{{ ds }}{% endraw %}", "--jobs", "preprocessing", "--env", "{% raw %}{{ macros.env() }}{% endraw %}"],
     service_account_name="{{ cookiecutter.project_name }}",
 )
@@ -39,8 +39,8 @@ preprocessing = DatafyContainerOperator(
 pig_tables = DatafyContainerOperator(
     dag=dag,
     task_id="pig_tables",
-    name="pig_tables",
     image=image,
+    instance_type='mx_small',
     arguments=["--date", "{% raw %}{{ ds }}{% endraw %}", "--jobs", "pig_tables", "--env", "{% raw %}{{ macros.env() }}{% endraw %}"],
     service_account_name="{{ cookiecutter.project_name }}",
 )
@@ -48,8 +48,8 @@ pig_tables = DatafyContainerOperator(
 model_train = DatafyContainerOperator(
     dag=dag,
     task_id="model_train",
-    name="model_train",
     image=image,
+    instance_type='mx_large',
     arguments=["--date", "{% raw %}{{ ds }}{% endraw %}", "--jobs", "model_training", "--env", "{% raw %}{{ macros.env() }}{% endraw %}"],
     service_account_name="{{ cookiecutter.project_name }}",
 )
@@ -57,8 +57,8 @@ model_train = DatafyContainerOperator(
 model_run = DatafyContainerOperator(
     dag=dag,
     task_id="model_run",
-    name="model_run",
     image=image,
+    instance_type='mx_small',
     arguments=["--date", "{% raw %}{{ ds }}{% endraw %}", "--jobs", "model_run", "--env", "{% raw %}{{ macros.env() }}{% endraw %}"],
     service_account_name="{{ cookiecutter.project_name }}",
 )
