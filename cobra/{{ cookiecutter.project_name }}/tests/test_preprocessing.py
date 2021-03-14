@@ -1,5 +1,5 @@
 import pandas as pd
-from cobrademo.jobs import preprocessing
+from {{ cookiecutter.project_name }}.jobs import preprocessing
 
 
 def test_basetable_is_created_from_csv_file():

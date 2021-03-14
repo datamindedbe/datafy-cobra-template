@@ -1,5 +1,5 @@
 import boto3
-from cobrademo.jobs import preprocessing, model_training, pig_tables, model_run
+from {{ cookiecutter.project_name }}.jobs import preprocessing, model_training, pig_tables, model_run
 
 boto3.setup_default_session(profile_name="datafydemo")
 env = "local"

@@ -6,9 +6,9 @@ import joblib
 from cobra.evaluation import plot_variable_importance, plot_performance_curves, plot_univariate_predictor_quality, \
     plot_correlation_matrix
 from cobra.model_building import univariate_selection, ForwardFeatureSelection
-from cobrademo.storage import s3_root, s3_prefix, s3_bucket
-from cobrademo.jobs import entrypoint
-from cobrademo.jobs.preprocessing import preprocess
+from {{ cookiecutter.project_name }}.storage import s3_root, s3_prefix, s3_bucket
+from {{ cookiecutter.project_name }}.jobs import entrypoint
+from {{ cookiecutter.project_name }}.jobs.preprocessing import preprocess
 
 
 @entrypoint("model_run")

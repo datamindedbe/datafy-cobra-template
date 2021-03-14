@@ -1,5 +1,5 @@
 locals {
-  service_account_name = "cobrademo"
+  service_account_name = "{{ cookiecutter.project_name }}"
 }
 
 resource "kubernetes_service_account" "default" {
@@ -13,7 +13,7 @@ resource "kubernetes_service_account" "default" {
   automount_service_account_token = true
 }
 resource "aws_iam_role" "default" {
-  name               = "cobrademo-${var.env_name}"
+  name               = "{{ cookiecutter.project_name }}-${var.env_name}"
   path               = "/datafy-dp-${var.env_name}/"
   assume_role_policy = data.aws_iam_policy_document.default.json
 }
@@ -41,7 +41,7 @@ data "aws_iam_policy_document" "default" {
 //
 //resource "aws_iam_policy" "s3_permissions_policy" {
 //  policy =data.aws_iam_policy_document.s3_premissions.json
-//  name = "datafy-cobrademo-${var.env_name}-s3-permissions-policy"
+//  name = "datafy-{{ cookiecutter.project_name }}-${var.env_name}-s3-permissions-policy"
 //}
 
 data "aws_iam_policy_document" "s3_glue_permissions" {

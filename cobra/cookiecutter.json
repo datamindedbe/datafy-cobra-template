@@ -1,0 +1,5 @@
+{
+  "project_name": "cobra",
+  "workflow_start_date": "2020-03-15",
+  "workflow_schedule": "@daily"
+}

@@ -7,7 +7,7 @@ from setuptools import find_packages, setup
 
 
 setup(
-    name="cobrademo",
+    name="{{ cookiecutter.project_name }}",
     version="0.0.1",
     description="python sample template",
     python_requires=">=3.6, <3.8",
@@ -17,7 +17,7 @@ setup(
     include_package_data=True,
     author="datafy",
     entry_points={
-        "console_scripts": ["app = cobrademo.app:main",]
+        "console_scripts": ["app = {{ cookiecutter.project_name }}.app:main",]
     },
     zip_safe=False,
     keywords="data pipelines, data engineering",

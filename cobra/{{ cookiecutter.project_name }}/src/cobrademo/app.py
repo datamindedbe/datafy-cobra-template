@@ -2,15 +2,15 @@ import argparse
 import logging
 import sys
 
-from cobrademo.jobs import entrypoint
+from {{ cookiecutter.project_name }}.jobs import entrypoint
 # this import is required to discover the jobs
 # noinspection PyUnresolvedReferences
-from cobrademo.jobs import sample, preprocessing, pig_tables, model_training, model_run
+from {{ cookiecutter.project_name }}.jobs import sample, preprocessing, pig_tables, model_training, model_run
 
 
 def main():
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
-    parser = argparse.ArgumentParser(description="cobrademo")
+    parser = argparse.ArgumentParser(description="{{ cookiecutter.project_name }}")
     parser.add_argument(
         "-d", "--date", dest="date", help="date in format YYYY-mm-dd", required=True
     )

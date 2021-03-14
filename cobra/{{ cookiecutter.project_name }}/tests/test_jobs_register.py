@@ -1,4 +1,4 @@
-from cobrademo.jobs import entrypoint
+from {{ cookiecutter.project_name }}.jobs import entrypoint
 
 
 @entrypoint(name="job1")

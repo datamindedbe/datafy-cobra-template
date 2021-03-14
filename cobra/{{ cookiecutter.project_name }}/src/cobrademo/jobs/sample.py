@@ -2,7 +2,7 @@ import logging
 import requests
 from typing import Optional
 
-from cobrademo.jobs import entrypoint
+from {{ cookiecutter.project_name }}.jobs import entrypoint
 
 
 @entrypoint("sample")

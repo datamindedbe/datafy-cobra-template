@@ -6,8 +6,8 @@ from typing import Optional
 
 from cobra.evaluation import generate_pig_tables
 from cobra.preprocessing import PreProcessor
-from cobrademo.jobs import entrypoint
-from cobrademo.storage import s3_root, s3_bucket
+from {{ cookiecutter.project_name }}.jobs import entrypoint
+from {{ cookiecutter.project_name }}.storage import s3_root, s3_bucket
 import awswrangler as wr
 
 
