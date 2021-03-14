@@ -22,7 +22,7 @@ def run(env: str, date: str):
         dataset=True,
         database="cobra",
         path=s3_root(env) + f"/{date}/basetable",
-        table="basetable",
+        table="{{ cookiecutter.project_name }}_basetable",
         mode='overwrite'
     )
 
